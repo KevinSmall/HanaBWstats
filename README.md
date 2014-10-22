@@ -5,7 +5,7 @@ Source code and HANA models to display BW query usage statistics on a 3D globe i
 
 UI entry point is: <server:port>/ZBWSTATS/UI/globe/index.html.
 
-For more information see http://scn.sap.com/ .
+For more information see http://scn.sap.com/community/bw-hana/blog/2014/10/22/visualising-bw-query-usage-statistics-on-a-globe-using-hana-xsjs-sapui5-d3.
 
 Known Bugs
 ----------
