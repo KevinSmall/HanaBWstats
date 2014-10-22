@@ -1,0 +1,9 @@
+table.schemaName = "ZBWSTATS";
+table.tableType = COLUMNSTORE;  
+table.description = "User locations";
+table.columns = [ 
+	{name = "USERNAME"; sqlType = NVARCHAR; length = 12; nullable = false; comment = "User name";  },
+	{name = "LAT"; sqlType = DECIMAL; nullable = false; precision = 12; scale = 3; comment = "Latitude"; },
+	{name = "LON"; sqlType = DECIMAL; nullable = false; precision = 12; scale = 3; comment = "Longitude"; }
+ ];			
+table.primaryKey.pkcolumns = ["USERNAME"];

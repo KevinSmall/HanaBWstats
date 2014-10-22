@@ -1,0 +1,95 @@
+/* from shaded globe */
+
+.land {
+    fill: rgb(117, 87, 57);
+    stroke-opacity: 1;
+}
+.countries path {
+    stroke: rgb(80, 64, 39);
+    stroke-linejoin: round;
+    stroke-width: .5;
+    fill: rgb(117, 87, 57);
+    opacity: .1;
+}
+.countries path:hover {
+    fill-opacity: .1;
+    stroke-width: 1;
+    opacity: 1;
+}
+.graticule {
+    fill: none;
+    stroke: black;
+    stroke-width: .5;
+    opacity: .2;
+}
+.labels {
+    font: 8px sans-serif;
+    fill: black;
+    opacity: .5;
+}
+.noclicks {
+    pointer-events: none;
+}
+.point {
+    opacity: .6;
+}
+
+/* from earlier globe */
+body {
+    background: #fcfcfa;
+}
+.stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 3px;
+}
+/*
+        .globe {
+		  fill: 5EB2D1;  // #fff  //not workinf??
+		}
+*/
+
+/*
+		.graticule {
+		  fill: none;
+		  stroke: #777;
+		  stroke-width: .5px;
+		  stroke-opacity: .5;
+		}
+*/
+
+/*		 
+		.land {
+		  fill: 90B854;  //#222
+		}
+*/
+
+.boundary {
+    fill: none;
+    stroke: #fff;
+    stroke-width: .5px;
+}
+.foreground {
+    fill: none;
+    stroke: DBFFED;
+    stroke-width: 3.5px;
+    pointer-events: all;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+.quakePath {
+    fill: none;
+    stroke: DBFFED;
+    stroke-width: 2px;
+    pointer-events: all;
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+}
+.quake {
+    stroke: #ccc;
+    stroke-width: 1px;
+}
+.quake-selected {
+    stroke: #46422C;
+    stroke-width: 2px;
+}

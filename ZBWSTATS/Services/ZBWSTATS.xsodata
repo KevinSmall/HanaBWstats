@@ -1,0 +1,7 @@
+service namespace "ZBWSTATS.Services"
+{ 
+  "ZBWSTATS.Models::CV_LE_STATS" as "STATSLOC"
+   key ("TCTUSERNM", "CALDAY")     
+   aggregates always
+   ;
+}

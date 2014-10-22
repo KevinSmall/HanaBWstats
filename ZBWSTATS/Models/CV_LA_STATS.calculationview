@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CV_LA_STATS" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DEFAULT" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <descriptions defaultDescription="Calc view, layer aggregate, stats"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="CV_LB_STATS" type="CALCULATION_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/ZBWSTATS.Models/calculationviews/CV_LB_STATS</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="CV_LB_STATS">
+    <attributes>
+      <attribute id="0CALDAY" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0CALDAY"/>
+        <keyMapping columnObjectName="CV_LB_STATS" columnName="0CALDAY"/>
+      </attribute>
+      <attribute id="0TCTSESUID" hidden="true" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0TCTSESUID"/>
+        <keyMapping columnObjectName="CV_LB_STATS" columnName="0TCTSESUID"/>
+      </attribute>
+      <attribute id="0TCTUSERNM" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0TCTUSERNM"/>
+        <keyMapping columnObjectName="CV_LB_STATS" columnName="0TCTUSERNM"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="0TCTTIMEALL" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEALL"/>
+        <measureMapping columnObjectName="CV_LB_STATS" columnName="0TCTTIMEALL"/>
+      </measure>
+      <measure id="0TCTTIMEDM" order="5" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEDM"/>
+        <measureMapping columnObjectName="CV_LB_STATS" columnName="0TCTTIMEDM"/>
+      </measure>
+      <measure id="0TCTTIMEFE" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEFE"/>
+        <measureMapping columnObjectName="CV_LB_STATS" columnName="0TCTTIMEFE"/>
+      </measure>
+      <measure id="0TCTTIMENA" order="7" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMENA"/>
+        <measureMapping columnObjectName="CV_LB_STATS" columnName="0TCTTIMENA"/>
+      </measure>
+      <measure id="0TCTTMEOLAP" order="8" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTMEOLAP"/>
+        <measureMapping columnObjectName="CV_LB_STATS" columnName="0TCTTMEOLAP"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures>
+      <measure id="SESSIONCOUNT" hidden="false" order="9" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" datatype="INTEGER">
+        <descriptions defaultDescription="SESSIONCOUNT"/>
+        <exceptionAggregation exceptionAggregationType="countDistinct">
+          <attribute attributeName="0TCTSESUID"/>
+        </exceptionAggregation>
+        <formula>1</formula>
+      </measure>
+    </calculatedMeasures>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="72" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

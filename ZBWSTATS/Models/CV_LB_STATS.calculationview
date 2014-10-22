@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CV_LB_STATS" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="crossClient" defaultLanguage="$$language$$" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DEFAULT" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <descriptions defaultDescription="Calc view, layer base, stats"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="TCT_C01" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/system-local.bw.bw2hana.0/analyticviews/TCT_C01</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+      <viewAttributes>
+        <viewAttribute id="0CALDAY"/>
+        <viewAttribute id="0TCTUSERNM"/>
+        <viewAttribute id="0TCTTIMEALL"/>
+        <viewAttribute id="0TCTSESUID"/>
+        <viewAttribute id="0TCTTIMEDM"/>
+        <viewAttribute id="0TCTTIMEFE"/>
+        <viewAttribute id="0TCTTIMENA"/>
+        <viewAttribute id="0TCTTMEOLAP"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#TCT_C01">
+        <mapping xsi:type="Calculation:AttributeMapping" target="0CALDAY" source="0CALDAY"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTUSERNM" source="0TCTUSERNM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTTIMEALL" source="0TCTTIMEALL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTSESUID" source="0TCTSESUID"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTTIMEDM" source="0TCTTIMEDM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTTIMEFE" source="0TCTTIMEFE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTTIMENA" source="0TCTTIMENA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="0TCTTMEOLAP" source="0TCTTMEOLAP"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Union_1">
+    <attributes>
+      <attribute id="0CALDAY" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0CALDAY"/>
+        <keyMapping columnObjectName="Union_1" columnName="0CALDAY"/>
+      </attribute>
+      <attribute id="0TCTSESUID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0TCTSESUID"/>
+        <keyMapping columnObjectName="Union_1" columnName="0TCTSESUID"/>
+      </attribute>
+      <attribute id="0TCTUSERNM" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="0TCTUSERNM"/>
+        <keyMapping columnObjectName="Union_1" columnName="0TCTUSERNM"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="0TCTTIMEALL" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEALL"/>
+        <measureMapping columnObjectName="Union_1" columnName="0TCTTIMEALL"/>
+      </measure>
+      <measure id="0TCTTIMEDM" order="5" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEDM"/>
+        <measureMapping columnObjectName="Union_1" columnName="0TCTTIMEDM"/>
+      </measure>
+      <measure id="0TCTTIMEFE" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMEFE"/>
+        <measureMapping columnObjectName="Union_1" columnName="0TCTTIMEFE"/>
+      </measure>
+      <measure id="0TCTTIMENA" order="7" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTIMENA"/>
+        <measureMapping columnObjectName="Union_1" columnName="0TCTTIMENA"/>
+      </measure>
+      <measure id="0TCTTMEOLAP" order="8" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="0TCTTMEOLAP"/>
+        <measureMapping columnObjectName="Union_1" columnName="0TCTTMEOLAP"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="72" y="87"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="22" y="166"/>
+        <rectangleSize height="121" width="241"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
